@@ -1,9 +1,5 @@
-// Use same-origin /api when served by Express; otherwise point at backend
-const API =
-  window.location.protocol === "file:" ||
-  (window.location.port && window.location.port !== "5000")
-    ? "https://secure-note-taking-application.vercel.app/api"
-    : "/api";
+// Live API on Vercel
+const API = "https://secure-note-taking-application.vercel.app/api";
 
 let token = localStorage.getItem("token") || null;
 let currentUser = JSON.parse(localStorage.getItem("user") || "null");
@@ -38,7 +34,7 @@ async function api(path, options = {}) {
     });
   } catch (networkErr) {
     throw new Error(
-      "Cannot reach server. Start backend with: cd backend && npm start (MongoDB must be running)."
+      "Cannot reach server. Check API URL and Vercel deployment."
     );
   }
 
@@ -50,7 +46,7 @@ async function api(path, options = {}) {
     throw new Error(
       res.ok
         ? "Invalid response from server"
-        : `Server error (${res.status}). Is the API running on port 5000?`
+        : `Server error (${res.status}). Check /api/health on Vercel.`
     );
   }
 
