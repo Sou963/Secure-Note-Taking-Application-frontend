@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f5;
+  color: #222;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+h2, h3 {
+  margin: 16px 0 10px;
+  font-size: 1.2rem;
+}
+
+input, textarea, select, button {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.tabs, .nav-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs button, .nav-tabs button {
+  width: auto;
+  flex: 1;
+  background: #e5e7eb;
+  color: #333;
+}
+
+.tabs button.active, .nav-tabs button.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.user-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 4px;
+}
+
+.user-bar button {
+  width: auto;
+  background: #dc2626;
+}
+
+.user-bar button:hover {
+  background: #b91c1c;
+}
+
+.form-row {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+
+.card h4 {
+  margin-bottom: 4px;
+}
+
+.card .meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.card .actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.card .actions button {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.card .actions button.delete {
+  background: #dc2626;
+}
+
+.card .actions button.delete:hover {
+  background: #b91c1c;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  width: auto;
+  padding: 6px 12px;
+  background: #e5e7eb;
+  color: #333;
+}
+
+.pagination button.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.message {
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+.message.error {
+  display: block;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.message.success {
+  display: block;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.interest-group {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.interest-group strong {
+  display: block;
+  margin-bottom: 4px;
+}

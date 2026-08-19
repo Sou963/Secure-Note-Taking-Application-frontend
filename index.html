@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Note App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Secure Note-Taking App</h1>
+
+    <!-- Auth Section -->
+    <section id="auth-section">
+      <div class="tabs">
+        <button id="tab-login" class="active" onclick="showLogin()">Login</button>
+        <button id="tab-register" onclick="showRegister()">Register</button>
+      </div>
+
+      <div id="login-form">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button onclick="login()">Login</button>
+      </div>
+
+      <div id="register-form" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" id="reg-name" placeholder="Name" />
+        <input type="email" id="reg-email" placeholder="Email" />
+        <input type="password" id="reg-password" placeholder="Password (min 6)" />
+        <input type="text" id="reg-interests" placeholder="Interests (comma separated)" />
+        <button onclick="register()">Register</button>
+      </div>
+    </section>
+
+    <!-- App Section (after login) -->
+    <section id="app-section" style="display:none;">
+      <div class="user-bar">
+        <span id="user-info"></span>
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <nav class="nav-tabs">
+        <button onclick="showTab('notes')" id="nav-notes" class="active">My Notes</button>
+        <button onclick="showTab('posts')" id="nav-posts">Public Posts</button>
+        <button onclick="showTab('admin')" id="nav-admin" style="display:none;">Admin</button>
+      </nav>
+
+      <!-- Notes Tab -->
+      <div id="tab-notes" class="tab-content">
+        <h2>Notes</h2>
+        <div class="form-row">
+          <input type="text" id="note-title" placeholder="Title" />
+          <textarea id="note-content" placeholder="Content"></textarea>
+          <button onclick="createNote()">Create Note</button>
+        </div>
+        <div id="notes-list"></div>
+        <div class="pagination" id="notes-pagination"></div>
+      </div>
+
+      <!-- Posts Tab -->
+      <div id="tab-posts" class="tab-content" style="display:none;">
+        <h2>Public Posts</h2>
+        <div class="form-row">
+          <input type="text" id="post-title" placeholder="Title" />
+          <textarea id="post-content" placeholder="Content"></textarea>
+          <button onclick="createPost()">Create Post</button>
+        </div>
+        <div id="posts-list"></div>
+        <div class="pagination" id="posts-pagination"></div>
+      </div>
+
+      <!-- Admin Tab -->
+      <div id="tab-admin" class="tab-content" style="display:none;">
+        <h2>User Management</h2>
+        <div class="form-row">
+          <input type="text" id="admin-name" placeholder="Name" />
+          <input type="email" id="admin-email" placeholder="Email" />
+          <input type="password" id="admin-password" placeholder="Password" />
+          <select id="admin-role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <input type="text" id="admin-interests" placeholder="Interests (comma)" />
+          <button onclick="adminCreateUser()">Add User</button>
+        </div>
+        <div id="users-list"></div>
+        <div class="pagination" id="users-pagination"></div>
+
+        <h3>Group by Interests</h3>
+        <button onclick="loadGroupByInterests()">Load Groups</button>
+        <div id="interests-groups"></div>
+
+        <h3>All Notes (Admin View)</h3>
+        <div id="admin-notes-list"></div>
+        <div class="pagination" id="admin-notes-pagination"></div>
+      </div>
+    </section>
+
+    <div id="message" class="message"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
