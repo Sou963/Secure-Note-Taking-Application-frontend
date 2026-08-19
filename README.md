@@ -22,29 +22,6 @@ REST API + basic frontend with JWT authentication and role-based access control 
 
 ```text
 secure-note-app/
-├── backend/                              # API / backend repository
-│   ├── server.js
-│   ├── api/
-│   │   └── index.js                      # Vercel serverless entry
-│   ├── vercel.json
-│   ├── .env                              # Local only; do not commit
-│   ├── package.json
-│   ├── config/
-│   │   └── db.js
-│   ├── models/
-│   │   ├── User.js
-│   │   ├── Note.js
-│   │   └── Post.js
-│   ├── middleware/
-│   │   ├── auth.js
-│   │   └── admin.js
-│   ├── routes/
-│   │   ├── auth.js
-│   │   ├── notes.js
-│   │   ├── users.js
-│   │   └── posts.js
-│   └── controllers/
-│
 └── frontend/                             # Basic frontend repository
     ├── index.html
     ├── app.js
@@ -62,24 +39,6 @@ Install and start MongoDB on `127.0.0.1:27017`, or use MongoDB Atlas and put the
 ```bash
 cd backend
 npm install
-```
-
-### 3. Configure environment
-
-Create `backend/.env`:
-
-```env
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/secure-note-app
-JWT_SECRET=supersecretjwtkey_change_in_production_12345
-JWT_EXPIRE=7d
-CLIENT_URL=http://localhost:5000
-```
-
-Production (MongoDB Atlas) example:
-
-```env
-MONGO_URI=mongodb+srv://USER:PASS@cluster.mongodb.net/secure-note-app?retryWrites=true&w=majority
 ```
 
 ### 4. Seed an admin user (optional)
